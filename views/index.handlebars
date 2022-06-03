@@ -1,0 +1,7 @@
+<form action="/" method="POST" class="d-flex flex-column align-items-center">
+    <input class="mt-4 mb-3 w-50" type="text" class="form-control" id="long_url" name="long_url" placeholder="Input URL here" required>
+    <button type="submit" class="btn btn-primary mb-3">Shorten</button>
+    {{#if url_invalid}}
+    <h1 class="text-danger">Invilid Url!!!</h1>
+    {{/if}}
+</form>
