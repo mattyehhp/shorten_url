@@ -1,5 +1,6 @@
 # shorten_url
 
+![alt text](https://github.com/mattyehhp/shorten_url/blob/main/shorten_url.png)
 
 ## 環境建置
 1. Node.js@14.16.0
@@ -33,3 +34,10 @@ LC_CTYPE=UTF-8
 ```bash 
 npm run dev
 ```
+
+## 功能
+1. 能將使用者輸入的網址轉換成短網址，使用者能利用短網址導入原網址頁面
+
+
+
+
