@@ -8,8 +8,8 @@
 <script>
     function copyButtonOnClicked() {
         const resultLink = document.querySelector("#result-link")
-        console.log('onclick')
         navigator.clipboard.writeText(resultLink.innerHTML)
-        alert("Copy the link")
+        .then(() => alert('copied'))
+        .catch(error => console.log(error))
     }
 </script>
