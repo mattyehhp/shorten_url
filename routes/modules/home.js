@@ -20,9 +20,14 @@ router.get('/:short_Code', (req, res) => {
     .lean()
     .then(
         url => {
-            res.redirect(url[0].formerUrl)
+            if (url[0] !== undefined) {
+                return res.redirect(url[0].formerUrl)
+            } else {
+                return console.log('wrong url')
+            }
         }
     )
+    .catch(error => console.log(error))
 })
 
 router.post('/', (req, res) => {
@@ -38,17 +43,18 @@ router.post('/', (req, res) => {
     .then(
         url => {
             if (url.length !== 0) {
-                res.render('result', { shortUrl: url[0].shortUrl })
+                return res.render('result', { shortUrl: url[0].shortUrl })
             } else {
                 Url.create({
                     short_Code: short_Code,
                     formerUrl: formerUrl,
                     shortUrl: shortUrl
                 })
-                res.render('result', { shortUrl })
+                return res.render('result', { shortUrl })
             }
         }
     )
+    .catch(error => console.log(error))
 })
 
 
